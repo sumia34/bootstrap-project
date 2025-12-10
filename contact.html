@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design for computer course</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background:white;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+        background: #fff;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+    }
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 6px;
+    }
+
+    label {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-bottom: 8px;
+      display: block;
+      }
+
+    #success {
+      color: green;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .sub {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(to right, #ff512f, #dd2476);
+      color: white;
+       font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .sub:hover {
+      background: linear-gradient(to right, #dd2476, #ff512f);
+      transform: scale(1.05);
+    }
+    
+</style>
+
+<body>
+    <div class="form-container">
+    <h1>
+        Form of web Developement
+    </h1>
+    <main>
+        <form onsubmit="return validateForm(event)">
+
+            <input id="firstName" type="text" placeholder="First Name"><br>
+            <small id="fnError" class="error"></small><br>
+            <input id="lastName" type="text" placeholder="Last Name"><br>
+            <small id="lnError" class="error"></small><br>
+            <input id="email" type="text" placeholder="Email"><br>
+            <small id="mailError" class="error"></small><br>
+
+            <input id="password" type="password" placeholder="password"><br>
+            <small id="pwError" class="error"></small><br>
+            <input id="strongpassword" type="password" placeholder="strong password"><br>
+            <small id="spwError" class="error"></small><br>
+
+            <label for="mail">Mail</label>
+
+            <input id="mail" type="radio" name="mail" value="mail">
+            <label for="Female">Female</label>
+            <input id="female" type="radio" name="Female" value="Female"><br>
+            <label>
+                <input type="checkbox" id="checked"> I agree to the terms and conditions
+            </label><br>
+            <small id="cbError" class="error"></small><br>
+            <button type="submit" class="sub">Submit</button>
+            <p id="success"></p>
+            </form>
+        </div>
+            <script>
+                function validateForm(event) {
+                    event.preventDefault();
+                    // clear previous errors
+                    document.querySelectorAll(".error").forEach(e => e.innerText = "");
+                    document.getElementById("success").innerText = "";
+
+                    let fn = document.getElementById("firstName").value.trim();
+                    let ln = document.getElementById("lastName").value.trim();
+                    let email = document.getElementById("email").value.trim();
+                    let password = document.getElementById("password").value;
+                    let confirmPassword = document.getElementById("strongpassword").value;
+
+                    let checked = document.getElementById("checked").checked;
+
+                    let valid = true;
+                    if (fn === "") {
+                        document.getElementById("fnError").innerText = "Firstname is required";
+                        valid = false;
+                    }
+                    if (ln === "") {
+                        document.getElementById("lnError").innerText = "lastname is required";
+                        valid = false;
+                    }
+                    if (!email.includes("@")) {
+                        document.getElementById("mailError").innerText = " Enter a valid email";
+                        valid = false;
+                    }
+
+                    if (password.length < 6) {
+                        document.getElementById("pwError").innerText = "password must b at least 6 characters";
+                        valid = false;
+                    }
+                    if (confirmPassword !== password) {
+                        document.getElementById("spwError").innerText = "password do not match";
+                        valid = false;
+                    }
+                    if (!checked) {
+                        document.getElementById("cbError").innerText = "you must agree terms and conditions"
+
+                    }
+                   if (valid) {
+        document.getElementById("success").innerText = "✅ Form submitted successfully!";
+      }
+
+      return false; // stop actual reload always
+    }
+
+
+
+
+            </script>
+
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>

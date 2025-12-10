@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- ------------------------
+       NAVIGATION BAR
+  ------------------------- -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">iCoder</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="about.html">About </a>
+
+          <li class="nav-item" >
+            <a class="nav-link active" href="contact.html">Contact Us</a>
+          </li>
+           <!-- Dropdown for Topics -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Topics
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Technology</a></li>
+              <li><a class="dropdown-item" href="#">Web dev</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Write for us</a></li>
+            </ul>
+          </li>
+
+        </ul>
+        <!-- Search form -->
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-outline-danger" type="submit">Search</button>
+        </form>
+        <!-- Login / Signup buttons -->
+        <div class="mx-2">
+          <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+          <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#signupModalLabel">SignUp</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+<!--login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal header -->
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="loginModalLabel">login icoder</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- Modal body with form -->
+      <div class="modal-body">
+        <form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+      </div>
+       <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--signup Modal -->
+<div class="modal fade" id="signupModalLabel" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="signupModalLabel">Get an icoder Account</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- ------------------------
+       BOOTSTRAP CAROUSEL (SLIDER)
+  ------------------------- -->
+  <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade " data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- First slide -->
+      <div class="carousel-item active">
+        <img
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D"
+           class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>💻 Basics of Coding</h5>
+          <p>Coding means writing instructions that make computers perform tasks</p>
+          <button class="btn btn-primary">Technology</button>
+          <button class="btn btn-danger">web Developement</button>
+          <button class="btn btn-success">Tech Fun</button>
+        </div>
+      </div>
+      <!-- Second slide -->
+      <div class="carousel-item">
+        <img class="img-fluid"
+          src="https://media.istockphoto.com/id/2170889984/photo/digital-abstract-cpu-ai-artificial-intelligence-and-machine-learning-concept.webp?a=1&b=1&s=612x612&w=0&k=20&c=zGSV2_Jth30uGNDD7g-XV-nJTxRL2HH2O3qJH7T3AV4="
+           class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>🤖 Artificial Intelligence Power</h5>
+          <p> AI helps machines learn, reason, and solve problems like humans</p>
+          <button class="btn btn-primary">Technology</button>
+          <button class="btn btn-danger">web Developement</button>
+          <button class="btn btn-success">Tech Fun</button>
+        </div>
+      </div>
+      <!-- Third slide -->
+      <div class="carousel-item">
+        <img
+          src="assets/download.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>🖥️ About a Computer</h5>
+          <p>A computer processes input data to generate meaningful output</p>
+          <button class="btn btn-primary">Technology</button>
+          <button class="btn btn-danger">web Developement</button>
+          <button class="btn btn-success">Tech Fun</button>
+        </div>
+      </div>
+    </div>
+     <!-- Carousel controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- ------------------------
+       CARDS AND CONTENT
+  ------------------------- -->
+  <div class="container my-4">
+  <div class="row mb-2"> <div class="col-md-6"> <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"> <div class="col p-4 d-flex flex-column position-static"> <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong> <h3 class="mb-0">Global Conferences</h3> <div class="mb-1 text-body-secondary">Nov 12</div> <p class="card-text mb-auto">Events where experts and innovators from around the world share ideas, trends, and solutions for a better future.</p> <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+Continue reading</a> </div> 
+<div class="col-auto d-none d-lg-block">
+<img class="bd-placeholder-img " height="250" width="200" src="https://images.unsplash.com/photo-1644675530894-472d24068414?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1vdW50YWluJTIwc2xpZGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="">  
+</div>
+ </div>
+ </div>
+<div class="col-md-6"> <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"> <div class="col p-4 d-flex flex-column position-static"> <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong> <h3 class="mb-0">Learn Designing</h3> <div class="mb-1 text-body-secondary">Nov 11</div> <p class="mb-auto"></p>Understand color theory, typography, and user experience principles</p> <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+Continue reading</a></div>
+<div class="col-auto d-none d-lg-block">
+<img class="bd-placeholder-img " height="250" width="250" src="https://plus.unsplash.com/premium_photo-1661638252493-c2be35117504?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGxlYXJuJTIwZGVzaWduaW5nfGVufDB8fDB8fHww" alt="">
+</div> </div></div></div>
+</div>
+<div class="container mt-5">
+    <div class="col"> <div class="card shadow-sm">  <div class="card-body"> <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> <div class="d-flex justify-content-between align-items-center"> <div class="btn-group"> <button type="button" class="btn btn-sm btn-outline-secondary">View</button> <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> </div> <small class="text-body-secondary">9 mins</small> </div> </div> </div> </div>
+  </div>
+  <div class="b-example-divider"></div>
+  <!-- ------------------------
+       FOOTER
+  ------------------------- -->
+  <footer class="py-3 my-4"> <ul class="nav justify-content-center border-bottom pb-3 mb-3"> <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li> <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li> <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li> <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li> <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li> </ul> <p class="text-center text-body-secondary">© 2020-2021 icoder, Inc.pakistan</p> </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
